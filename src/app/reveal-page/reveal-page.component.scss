@@ -1,0 +1,18 @@
+.reveal-page {
+  width: 100%;
+  height: 100%;
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+
+  > .body {
+    width: 100%;
+    color: #022b47;
+    text-align: center;
+  }
+
+
+  ion-button {
+    --background: #935802;
+  }
+}

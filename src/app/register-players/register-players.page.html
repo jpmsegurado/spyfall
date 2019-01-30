@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="register-players" padding>
+    <div class="body">
+      <h2>Quem irá jogar?</h2>
+      <p *ngIf="jogadores.length === 0">Adicione no formulário abaixo os jogadores que irão participar</p>
+
+      <ion-card *ngIf="jogadores.length > 0">
+        <ion-card-content>
+          <ion-item *ngFor="let jogador of jogadores; let i = index">
+            <ion-label>{{ jogador }}</ion-label>
+            <ion-icon name="close" right (click)="remove(i)"></ion-icon>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button expand="full" *ngIf="jogadores.length > 0" (click)="start(jogadores)">
+        Iniciar jogo
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="register-players--footer">
+  <ion-toolbar class="footer">
+    <form [formGroup]="form" (submit)="submit()">
+      <ion-item>
+        <ion-input autofocus placeholder="Nome do jogador" formControlName="nome"></ion-input>
+      </ion-item>
+      <ion-button type="submit">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </form>
+  </ion-toolbar>
+</ion-footer>

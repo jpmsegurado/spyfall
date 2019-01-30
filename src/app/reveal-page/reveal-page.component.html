@@ -1,0 +1,19 @@
+<ion-content>
+  <div class="reveal-page" padding>
+    <div class="body">
+      <div *ngIf="!isSpy">
+        <p>{{ nome }}, estamos em:</p>
+        <h2>Ilha deserta</h2>
+        <ion-button (click)="close()">Voltar</ion-button>
+      </div>
+
+      <div *ngIf="isSpy">
+        <p>Ei {{ nome }},</p>
+        <h2>Você é o espião!</h2>
+        <ion-button (click)="close()">Voltar</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+    
+    

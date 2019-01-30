@@ -1,0 +1,53 @@
+import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { RevealPageComponent } from '../reveal-page/reveal-page.component';
+
+@Component({
+  selector: 'app-game',
+  templateUrl: './game.page.html',
+  styleUrls: ['./game.page.scss'],
+})
+export class GamePage {
+
+  private jogadores: Array<any> = []
+  private spyPlayerIndex: Number = -1;
+
+  constructor (
+    public modalCtrl: ModalController
+  ) {
+
+  }
+
+  ionViewDidEnter () {
+    const str = localStorage.getItem('jogadores')
+    const jogadores: Array<String> = JSON.parse(str)
+    this.jogadores = jogadores.map((nome) => ({
+      nome,
+      verificado: false
+    }))
+
+    const len = jogadores.length;
+    const index = localStorage.getItem('spyPlayerIndex')
+    if (index != null) {
+      this.spyPlayerIndex = parseInt(index)
+    } else {
+      const spyPlayerIndex = Math.floor(Math.random() * len);
+      this.spyPlayerIndex = spyPlayerIndex
+      localStorage.setItem('spyPlayerIndex', String(spyPlayerIndex))
+    }
+  }
+
+  async verificar (index) {
+    const isSpy = this.spyPlayerIndex === index
+    const { nome } = this.jogadores[index]
+    const modal = await this.modalCtrl.create({
+      component: RevealPageComponent,
+      componentProps: { isSpy, nome }
+    })
+
+    this.jogadores[index].verificado = true
+
+    modal.present()
+  }
+
+}

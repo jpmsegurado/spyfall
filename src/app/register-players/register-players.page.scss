@@ -1,0 +1,65 @@
+.register-players {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  align-items: center;
+  background-color: #efefef;
+
+  > .body {
+
+    width: 100%;
+
+    > ion-button {
+      --background: #935802;
+      margin: 0 auto;
+      display: block;
+    }
+
+    > h2 {
+      color: #022b47;
+    }
+
+    > p {
+      color: #999;
+    }
+
+    > ion-card {
+      --background: #fff;
+      margin: 0;
+      max-height: 400px;
+      overflow: auto;
+      ion-item {
+        --background: transparent;
+
+        &:last-of-type {
+          --border-color: transparent;
+        }
+      }
+    }
+  }
+
+  &--footer {
+    .footer {
+      ion-item {
+        --background: transparent;
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        ion-item {
+          flex: 0 0 calc(100% - 70px);
+        }
+
+        ion-button {
+          --background: #935802;
+          width: 50px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
