@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
+import places from '../places.js'
 
 @Component({
   selector: 'app-register-players',
@@ -9,8 +10,8 @@ import { NavController } from '@ionic/angular';
 })
 export class RegisterPlayersPage {
 
-  private form: FormGroup;
-  private jogadores: Array<String> = []
+  public form: FormGroup;
+  public jogadores: Array<String> = []
 
   constructor(
     private navCtrl: NavController
@@ -33,6 +34,8 @@ export class RegisterPlayersPage {
 
   start (jogadores) {
     localStorage.setItem('jogadores', JSON.stringify(jogadores))
+    const random = Math.floor(Math.random() * places.length)
+    localStorage.setItem('local', places[random])
     this.navCtrl.navigateForward('game')
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { RevealPageComponent } from '../reveal-page/reveal-page.component';
 
 @Component({
@@ -9,17 +9,20 @@ import { RevealPageComponent } from '../reveal-page/reveal-page.component';
 })
 export class GamePage {
 
-  private jogadores: Array<any> = []
-  private spyPlayerIndex: Number = -1;
+  public jogadores: Array<any> = []
+  public spyPlayerIndex: Number = -1;
+  public local: String;
 
   constructor (
-    public modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private navCtrl: NavController
   ) {
 
   }
 
   ionViewDidEnter () {
     const str = localStorage.getItem('jogadores')
+    this.local = localStorage.getItem('local')
     const jogadores: Array<String> = JSON.parse(str)
     this.jogadores = jogadores.map((nome) => ({
       nome,
@@ -40,14 +43,20 @@ export class GamePage {
   async verificar (index) {
     const isSpy = this.spyPlayerIndex === index
     const { nome } = this.jogadores[index]
+    const local = this.local
     const modal = await this.modalCtrl.create({
       component: RevealPageComponent,
-      componentProps: { isSpy, nome }
+      componentProps: { isSpy, nome, local }
     })
 
     this.jogadores[index].verificado = true
 
     modal.present()
+  }
+
+  finalizar () {
+    localStorage.clear()
+    this.navCtrl.navigateForward('home')
   }
 
 }

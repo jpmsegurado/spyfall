@@ -1,5 +1,12 @@
 export default [
   'Ilha deserta',
   'Supermercado',
-  'Aeroporto'
+  'Aeroporto',
+  'Escola',
+  'Farmácia',
+  'Cruzeiro marítmo',
+  'Boate',
+  'Bar',
+  'Faculdade',
+  'Asilo'
 ]
