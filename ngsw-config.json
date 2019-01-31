@@ -2,7 +2,7 @@
   "index": "/index.html",
   "assetGroups": [
     {
-      "name": "app",
+      "name": "Spyfall",
       "installMode": "prefetch",
       "resources": {
         "files": [
