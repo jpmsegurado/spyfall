@@ -56,6 +56,7 @@ export class GamePage {
 
   finalizar () {
     localStorage.removeItem('local')
+    localStorage.remoteItem('spyPlayerIndex')
     this.navCtrl.navigateForward('home')
   }
 
