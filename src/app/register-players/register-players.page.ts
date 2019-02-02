@@ -19,6 +19,12 @@ export class RegisterPlayersPage {
     this.form = new FormGroup({
       nome: new FormControl('', Validators.required)
     })
+
+    const jogadores = localStorage.getItem('jogadores')
+
+    if (jogadores) {
+      this.jogadores = JSON.parse(jogadores)
+    }
   }
 
   submit () {

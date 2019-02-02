@@ -22,8 +22,8 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      const jogadores = localStorage.getItem('jogadores')
-      if (jogadores != null) this.navCtrl.navigateForward('game')
+      const local = localStorage.getItem('local')
+      if (local != null) this.navCtrl.navigateForward('game')
     });
   }
 }

@@ -55,7 +55,7 @@ export class GamePage {
   }
 
   finalizar () {
-    localStorage.clear()
+    localStorage.removeItem('local')
     this.navCtrl.navigateForward('home')
   }
 
