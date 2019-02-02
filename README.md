@@ -11,5 +11,7 @@ Ou então, clone o repositório, e rode `npm install`, crie uma conta no firebas
 No meu caso utilizei o firebase, então depois de uma conta criada, rode o comando `firebase login` onde terá de escolher o projeto para usar a hospedagem e logo depois `firebase deploy`
 
 [Documentação do firebase](https://firebase.google.com/docs/cli/?hl=pt-br)
+
 [Documentação do ionic 4](https://ionicframework.com/docs/)
+
 [Documentação do angular 7](https://angular.io/docs)
