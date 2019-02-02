@@ -4,7 +4,7 @@ Este é apenas um PWA para meus amigos que gostam de jogar o jogo `spyfall` em o
 
 # Como usá-lo
 
-Basicamente, o jogo está hospedado gratuitamente no Firebase [aqui](https://spyfall-9b93c.firebaseapp.com/home)
+Basicamente, o jogo está hospedado gratuitamente no Firebase [aqui](https://spyfall-9b93c.firebaseapp.com)
 
 Ou então, clone o repositório, e rode `npm install`, crie uma conta no firebase e faça a build do projeto com o comando `ionic build --prod` e depois os comandos de deploy para qualquer hospedagem que desejar.
 
