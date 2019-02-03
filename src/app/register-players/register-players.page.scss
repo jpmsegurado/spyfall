@@ -32,6 +32,7 @@
       overflow: auto;
       ion-item {
         --background: transparent;
+        text-transform: capitalize;
 
         &:last-of-type {
           --border-color: transparent;
@@ -52,6 +53,10 @@
         align-items: flex-end;
         ion-item {
           flex: 0 0 calc(100% - 70px);
+        }
+
+        ion-input {
+          text-transform: capitalize;
         }
 
         ion-button {

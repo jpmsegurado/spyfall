@@ -22,8 +22,13 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      const local = localStorage.getItem('local')
-      if (local != null) this.navCtrl.navigateForward('game')
+      const intro = localStorage.getItem('intro')
+      if (!intro) {
+        this.navCtrl.navigateForward('intro')
+      } else {
+        const local = localStorage.getItem('local')
+        if (local != null) this.navCtrl.navigateForward('game')
+      }
     });
   }
 }

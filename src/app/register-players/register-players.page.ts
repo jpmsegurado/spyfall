@@ -12,12 +12,13 @@ export class RegisterPlayersPage {
 
   public form: FormGroup;
   public jogadores: Array<String> = []
+  public nome: String;
 
   constructor(
     private navCtrl: NavController
   ) {
     this.form = new FormGroup({
-      nome: new FormControl('', Validators.required)
+      nome: new FormControl('')
     })
 
     const jogadores = localStorage.getItem('jogadores')
@@ -28,7 +29,7 @@ export class RegisterPlayersPage {
   }
 
   submit () {
-    if (this.form.valid) {
+    if (this.form.valid && this.form.value.nome.length > 0) {
       this.jogadores.push(this.form.value.nome)
       this.form.reset()
     }

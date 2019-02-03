@@ -11,6 +11,7 @@ export class GamePage {
 
   public jogadores: Array<any> = []
   public spyPlayerIndex: Number = -1;
+  public firstPlayerIndex: Number = -1
   public local: String;
 
   constructor (
@@ -31,12 +32,17 @@ export class GamePage {
 
     const len = jogadores.length;
     const index = localStorage.getItem('spyPlayerIndex')
+    const playerIndex = localStorage.getItem('firstPlayerIndex')
     if (index != null) {
       this.spyPlayerIndex = parseInt(index)
+      this.firstPlayerIndex = parseInt(playerIndex)
     } else {
       const spyPlayerIndex = Math.floor(Math.random() * len);
+      const firstPlayerIndex = Math.floor(Math.random() * len);
       this.spyPlayerIndex = spyPlayerIndex
+      this.firstPlayerIndex = firstPlayerIndex
       localStorage.setItem('spyPlayerIndex', String(spyPlayerIndex))
+      localStorage.setItem('firstPlayerIndex', String(firstPlayerIndex))
     }
   }
 

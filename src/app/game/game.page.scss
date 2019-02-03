@@ -12,4 +12,12 @@
   ion-button, &--footer ion-button {
     --background: #935802;
   }
+
+  .first-player-info {
+    margin-top: 30px;
+
+    h2 {
+      text-transform: capitalize
+    }
+  }
 }

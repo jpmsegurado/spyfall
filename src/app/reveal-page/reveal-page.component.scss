@@ -9,6 +9,12 @@
     width: 100%;
     color: #022b47;
     text-align: center;
+
+    p {
+      span {
+        text-transform: capitalize;
+      }
+    }
   }
 
 

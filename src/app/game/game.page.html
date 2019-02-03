@@ -10,6 +10,11 @@
         [disabled]="jogador.verificado">
         {{ jogador.nome }}
       </ion-button>
+
+      <div class="first-player-info" *ngIf="firstPlayerIndex > -1">
+        <p>Primeiro jogador a perguntar</p>
+        <h2>{{ jogadores[firstPlayerIndex].nome }}</h2>
+      </div>
     </div>
   </div>
 </ion-content>

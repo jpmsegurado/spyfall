@@ -1,0 +1,72 @@
+<ion-content class="intro-page">
+  <ion-slides pager="false" [options]="slideOpts">
+    <ion-slide>
+      <div class="slide-content">
+        <div class="logo">
+          <img src="./assets/spy.png" alt="">
+        </div>
+        <h2>Spyfall</h2>
+        <p>Há um espião entre nós</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="slide-content">
+        <h2>Como funciona</h2>
+        <p>
+          Coloque o nome dos seus amigos e inicie o jogo
+        </p>
+        <p>
+          Todos irão receber o local onde estamos, menos o <strong>espião</strong>.
+        </p>
+        <p>
+          O jogo irá sortear quem pergunta primeiro pra quem
+        </p>
+        <p>
+          Devem ser feitas perguntas com respostas de 
+          <strong>Sim</strong> ou <strong>Não</strong>
+          a respeito do local
+        </p>
+        <p>Quem for perguntado, recebe o direito de perguntar para outra pessoa e assim em diante</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <h2>Dicas para o espião</h2>
+
+      <p>Ao ser perguntado sobre o local, tente reparar nas outras respostas para te ajudar</p>
+      <p>Se você tiver certeza sobre o local, você pode falar a qualquer momento que é o espião e revelar o local</p>
+      <p>Caso acerte, você ganha o jogo</p>
+      <p>Do contrário, as outras pessoas ganham</p>
+    </ion-slide>
+    <ion-slide>
+      <h2>Dicas para os outros</h2>
+
+      <p>Reparem em perguntas ou respostas suspeitas</p>
+      <p>Tente induzir o espião ao erro</p>
+      <p>Ao reparar em algo suspeito, se todo o time entrar em consenso, vocês podem acusar alguém</p>
+      <p>Porém tomem cuidado, o time possuí apenas duas tentativas</p>
+    </ion-slide>
+    <ion-slide>
+      <h2>Tudo certo?</h2>
+      <ion-button (click)="comecar()">
+        Começar
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="index > 0">
+      <ion-button (click)="slides.slidePrev()">
+        <ion-icon slot="start" name="ios-arrow-back"></ion-icon>
+        Anterior
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" *ngIf="index < 4">
+      <ion-button (click)="slides.slideNext()">
+        Próximo
+        <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

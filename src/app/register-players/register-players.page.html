@@ -24,9 +24,9 @@
   <ion-toolbar class="footer">
     <form [formGroup]="form" (submit)="submit()">
       <ion-item>
-        <ion-input autofocus placeholder="Nome do jogador" formControlName="nome"></ion-input>
+        <ion-input [(ngModel)]="nome" autofocus placeholder="Nome do jogador" formControlName="nome"></ion-input>
       </ion-item>
-      <ion-button type="submit">
+      <ion-button type="submit" [disabled]="!nome || nome.length === 0">
         <ion-icon name="add"></ion-icon>
       </ion-button>
     </form>
