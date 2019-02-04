@@ -3,6 +3,10 @@
   height: 100%;
   background-color: #efefef;
 
+  &--content {
+    --background: #efefef;
+  }
+
   > .body {
     width: 100%;
     color: #022b47;
