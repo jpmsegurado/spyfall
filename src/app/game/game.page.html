@@ -6,8 +6,7 @@
       <ion-button
         expand="full"
         *ngFor="let jogador of jogadores; let i = index"
-        (click)="verificar(i)"
-        [disabled]="jogador.verificado">
+        (click)="verificar(i)">
         {{ jogador.nome }}
       </ion-button>
 
